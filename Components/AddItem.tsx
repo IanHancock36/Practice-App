@@ -1,9 +1,14 @@
-import React, { useState } from 'react'
+import React, { SetStateAction, useState } from 'react'
 import { View, Text, TextInput, TouchableOpacity, StyleSheet } from 'react-native'
 
-export interface Item {
+export interface MyItem {
     item: string;
     quantity: string;
+}
+
+interface Props {
+    setShoppingList: React.Dispatch<SetStateAction<MyItem[]>>
+    shoppingList: MyItem[]; 
 }
 
 export const AddItem = () => {
